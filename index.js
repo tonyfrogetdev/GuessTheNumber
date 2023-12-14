@@ -7,7 +7,7 @@ const getRandomNumber = (max) => {
 // On stocke le nombre aléatoire de 0 à 100 dans la variable targetNumber
 let targetNumber = getRandomNumber(100);
 let nombreTours = 1;
-console.log(targetNumber);
+// console.log(targetNumber); Dé-commenter pour savoir le nombre à l'avance
 
 const playGuessingGame = () => {
   const guessNumber = prompt("Rentrez un nombre entre 0 et 100: ");
@@ -31,6 +31,15 @@ const playGuessingGame = () => {
   }
   console.log("Vous avez trouver le nombre mystère, bravo !");
   console.log("Vous avez fait " + nombreTours + " essais");
+
+  const askForNewGame = prompt("Voulez vous rejouer ? (Y/N)");
+
+  if (askForNewGame === "Y") {
+    playGuessingGame();
+  }
+  if (askForNewGame === "N") {
+    console.log("Merci d'avoir jouer, bye");
+  }
 };
 
 playGuessingGame();
